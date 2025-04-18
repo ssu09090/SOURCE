@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>마이너 아르카나</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .wrap {
+        display: flex;
+        gap: 2rem;
+      }
+      .wrap > .items {
+        width: 200px;
+        height: 200px;
+        position: relative;
+      }
+      .wrap > .items > img:hover + .caption {
+        opacity: 1;
+      }
+      .wrap > .items > img {
+        width: 100%;
+        object-fit: cover;
+      }
+      .wrap > .items > .caption {
+        position: absolute;
+        top: -250px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 130%;
+        background-color: #222;
+        color: #eee;
+        text-align: center;
+        border-radius: 5px;
+        padding: 1rem;
+        opacity: 0;
+        transition: all 1s;
+      }
+      .wrap > .items > .caption::after {
+        content: " ";
+        position: absolute;
+        background-color: #222;
+        width: 10px;
+        height: 10px;
+        bottom: -5px;
+        transform: rotate(45deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="items">
+        <img src="cups.png" alt="컵" />
+        <div class="caption">
+          <h2>Cups</h2>
+          <p>상징: 감정, 사랑, 관계, 공감</p>
+          <p>요소: 물</p>
+          <p>영역: 감성, 연애, 인간관계, 예술성</p>
+          <p>
+            느낌: 마음이 움직이는 것들. ‘좋아해’, ‘속상해’, ‘기쁘다’, ‘눈물나’
+            같은 감정 표현
+          </p>
+        </div>
+      </div>
+      <div class="items">
+        <img src="swords.png" alt="소드" />
+        <div class="caption">
+          <h2>Swords</h2>
+          <p>상징: 생각, 이성, 갈등, 결단력</p>
+          <p>요소: 공기</p>
+          <p>영역: 사고, 커뮤니케이션, 진실, 판단</p>
+          <p>
+            느낌: 머리로 생각하는 것들. 말싸움, 스트레스, 고민, 진실을 꿰뚫는
+            지성도 포함
+          </p>
+        </div>
+      </div>
+      <div class="items">
+        <img src="wands.png" alt="완드" />
+        <div class="caption">
+          <h2>Wands</h2>
+          <p>상징: 열정, 창의력, 행동, 의지</p>
+          <p>요소: 불</p>
+          <p>영역: 직업, 프로젝트, 아이디어, 도전</p>
+          <p>
+            느낌: "이거 해보고 싶어!" 같은 불타는 에너지, 일이나 목표를 향한
+            의지, 창작 열정
+          </p>
+        </div>
+      </div>
+      <div class="items">
+        <img src="pentacles.png" alt="펜타클" />
+        <div class="caption">
+          <h2>Pentacles</h2>
+          <p>상징: 물질, 현실, 돈, 건강</p>
+          <p>요소: 흙</p>
+          <p>영역: 재정, 일, 몸, 안정</p>
+          <p>현실적으로 눈에 보이는 결과들! 돈, 건강, 직장, 삶의 기반을 상징</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>카드뒤집기</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 100vh;
+      }
+      .container {
+        height: 100%;
+        perspective: 800px;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+      }
+      .card {
+        transform-style: preserve-3d;
+        width: 200px;
+        height: 300px;
+        position: relative;
+        transition: all 1s;
+      }
+      .card > div {
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: bolder;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        backface-visibility: hidden;
+      }
+      .front {
+        background-color: salmon;
+        z-index: 1;
+      }
+      .back {
+        background-color: yellowgreen;
+        transform: rotateY(180deg);
+        /* z-index: -1; */
+      }
+      /* .card:hover {
+        transform: rotateY(180deg);
+      } */
+       .isflip{
+        transform: rotateY(180deg);
+       }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="front">FRONT</div>
+        <div class="back">BACK</div>
+      </div>
+    </div>
+    <script>
+        const card = document.querySelector('.card');
+        card.addEventListener('click', ()=>{
+            card.classList.toggle('isflip');
+        });
+    </script>
+  </body>
+</html>

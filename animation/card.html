@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <title>card</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{
+            height: 100vh;
+            perspective: 800px;
+        }
+        .container{
+            height: 100vh;
+            transform-style: preserve-3d;
+        }
+        .card{
+            width: 150px;
+            height: 300px;
+            background-color: tomato;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            transition: all 0.5s;
+            backface-visibility: hidden;
+            
+            /* backface-visibility: visible; 뒤가 비쳐 보임 */
+            
+        }
+        .card:hover{transform: translate(-50%,-50%) rotateY(180deg);}
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="card">CARD</div>
+</div>
+</body>
+</html>

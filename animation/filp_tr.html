@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>타로카드 뒤집기</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: bisque;
+        height: 100vh;
+      }
+      .container {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        perspective: 800px; /*이게 뭘까?*/
+      }
+      .container > .keyword {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+      }
+      .container > .card {
+        width: 200px;
+        height: 300px;
+        transform-style: preserve-3d;
+        position: relative;
+        transition: all 1s;
+      }
+      .card > div {
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: bolder;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        backface-visibility: hidden;
+      }
+      .container > .card > .front {
+        z-index: 1;
+      }
+      .container > .card > .front > img {
+        width: 100%;
+        height: 100%;
+      }
+      .container > .card > .back {
+        transform: rotateY(180deg);
+      }
+      .container > .card > .back > img {
+        width: 100%;
+        height: 100%;
+      }
+      .isflip {
+        transform: rotateY(180deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="front">
+          <img src="star.jpg" alt="별" />
+        </div>
+        <div class="back">
+          <img src="back2.jpg" alt="뒷면" />
+        </div>
+      </div>
+      <div class="keyword">
+        <h2>the star</h2>
+        <h4>키워드</h4>
+        <p>희망</p>
+        <p>치유</p>
+        <p>영감</p>
+        <p>회복</p>
+        <p>순수한 믿음</p>
+        <p>빛나는 가능성</p>
+      </div>
+    </div>
+
+    <script>
+      const card = document.querySelector(".card");
+      card.addEventListener("click", () => {
+        card.classList.toggle("isflip");
+      });
+    </script>
+  </body>
+</html>
